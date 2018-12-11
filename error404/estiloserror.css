@@ -1,0 +1,131 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+ 
+/* remember to define visible focus styles! 
+:focus {
+	outline: ?????;
+} */
+ 
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+ 
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face{
+    font-family: 'Car Crash';
+    src: url('fuentes/Car.ttf');
+}
+
+html {
+	font-size: 100%;
+	background-color:#89DDE3;
+}
+body {
+	margin:0 auto;
+	font-family:"Car Crash", Times, serif;
+	font-size:100%;
+	width:98%;
+}
+
+img {border:none;}
+
+#inicio {
+	text-align:center;
+	font-size:2em;
+	position:relative;
+	top:260px;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+#cabecera {
+	clear: left;
+    float: left;
+    height: 200px;
+    overflow: visible;
+    position: relative;
+}
+
+#imgcabecera {
+	position: fixed;
+	z-index: 1;
+	top: 0px;
+	left: 0%;
+	width: 100%;
+	height: 30%;
+}
+
+h2 {
+	font-size:1.1em;
+}
+
+a {
+	color:#03F;
+}
+
+#imgback {
+	position: fixed;
+	z-index: -1;
+	top:0%;
+	left: 0%;
+	height:100%
+	width: 100%;
+}
+
+#inicio {
+	color:#0FC;
+	text-align:center;
+	font-size:2em;
+	position:relative;
+	top:260px;
+	font-weight:bold;
+	text-decoration:none;
+}

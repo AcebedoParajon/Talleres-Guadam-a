@@ -1,0 +1,156 @@
+# .htaccess por defecto
+RewriteBase /
+# Compresión de archivos
+# AddOutputFilterByType DEFLATE text/html
+# AddOutputFilterByType DEFLATE text/css
+# AddOutputFilterByType DEFLATE application/javascript
+
+# Permitir ejecución de scripts CGI y no presentar indice de dirctorios
+Options +ExecCGI -Indexes
+
+# Servir automáticamente los archivos de índice (index.(*) ó
+# default.(*))
+DirectoryIndex index.php index.html index.htm
+
+# Errores
+#ErrorDocument 400 /cgi-bin/error.php
+#ErrorDocument 401 /cgi-bin/error.php
+#ErrorDocument 403 /cgi-bin/forbidden.cgi
+ErrorDocument 404 /error404/notfound.html
+#ErrorDocument 405 /cgi-bin/error.php
+#ErrorDocument 406 /cgi-bin/error.php
+#ErrorDocument 409 /cgi-bin/error.php
+#ErrorDocument 413 /cgi-bin/error.php
+#ErrorDocument 414 /cgi-bin/error.php
+#ErrorDocument 500 /cgi-bin/error.php
+#ErrorDocument 501 /cgi-bin/error.php
+
+# Firma del Servidor en Off
+ServerSignature Off
+
+# Agregando el MIME-Type de los archivos .FLV, .SWF y .ICO
+#AddType video/x-flv .flv
+#AddType application/x-shockwave-flash .swf
+AddType image/x-icon .ico
+
+# Configurando por defecto el juego de caracteres y el lenguaje
+
+AddDefaultCharset UTF-8
+#AddLanguage en-US .html .htm .txt .xml .php
+
+# Colocando TIMEZONE y el correo del administrador
+
+SetEnv ES Europe/Madrid
+SetEnv SERVER_ADMIN acebedo.parajon@gmail.com
+
+# PHP como Script CGI
+### PHPINI-CGI
+# AddHandler php-cgi .php
+# Action php-cgi /cgi-bin/php5.cgi
+
+# PHP en FAST-CGI
+### FAST-CGI
+# AddHandler fastcgi-script .fcg .fcgi .fpl
+# AddHandler php5-fastcgi .php
+# Action php5-fastcgi /cgi-bin/fastcgi.fcgi
+
+# Cabeceras y control de Caché
+#
+# Caché para un año (realmente 336 días) para estos tipos de archivo
+<FilesMatch "\.(flv|ico|pdf)$">
+    Header set Cache-Control "max-age=29030400, public"
+</FilesMatch>
+
+# Caché para una semana
+<FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
+    Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+
+# Caché para tres horas
+<FilesMatch "\.(txt|xml|js|css)$">
+    Header set Cache-Control "max-age=604800"
+</FilesMatch>
+
+# Caché para un minuto
+<FilesMatch "\.(html|htm|php)$">
+    Header set Cache-Control "max-age=604800, private, no-store, no-cache, must-revalidate"
+
+    # -P3P es un estándar propuesto por la W3C para acceso seguro
+    Header set P3P "policyref=\"/w3c/p3p.xml\", CP=\"NOI DSP COR NID CUR ADM DEV OUR BUS\""
+
+    Header set imagetoolbar "no"
+</FilesMatch>
+# Bloquear robots maliciosos
+RewriteEngine on
+RewriteCond %{HTTP_USER_AGENT} ^(.*Girafabot|HTTrack) [NC]
+RewriteRule ^.*$ - [F,L]
+
+# URL’s amigables y Redireccionamientos
+#
+### Redireccionamientos SEO (según el ejemplo)
+# Redirect 301 /ssl-ns.html /htaccess/apache-ssl-in-htaccess.html
+# Redirect 301 /ht.tml
+# Redirect 301 /index.html /
+# RedirectMatch 301 /2006/htaccess-forum/(.*) /2006/htaccess/$1
+# RedirectMatch 301 /(.*)rfc2616(.*) http://www.w3.org/Protocols/$1
+# RedirectMatch 301 /phpmanual(.*) /manual/en/$1
+
+### Activando MOD_REWRITE
+
+### MOD_REWRITE para WordPress
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteBase /
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteRule . /index.php [L]
+# </IfModule>
+
+### Requerir el subdominio WWW
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^talleresguadamia.com [NC]
+RewriteRule ^(.*)$ http://www.talleresguadamia.com/$1 [R=301,L]
+
+#Más información: http://deteresa.com/redireccion-301/#ixzz2mBD2iScF
+### Para código enciclado
+# RewriteCond %{ENV:REDIRECT_STATUS} 200
+# RewriteRule ^.*$ – [L]
+
+### Redireccionar el Blog Feed a FeedBurner
+# RewriteCond %{HTTP_USER_AGENT} !^.*(FeedBurner|FeedValidator|Recent) [NC]
+# RewriteRule ^feed/?.*$ http://feeds.feedburner.com/somewhere [L, R=302]
+
+### Bloquear WGET?
+# RewriteCond %{HTTP_USER_AGENT} ^Wget.* [NC]
+# RewriteRule .* /cgi-bin/forbidden.cgi [L]
+
+
+# Autenticación
+#
+
+### Protección Básica
+# AuthName "Prompt"
+# AuthUserFile /home/somewhere.com/.htpasswd
+# AuthType basic
+# Require valid-user
+
+### Sitio en Construcción
+# AuthName "Under Development"
+# AuthUserFile /home/askapache.com/.htpasswd
+# AuthType basic
+# Require valid-user
+# Order Deny,Allow
+# Deny from all
+# Allow from 23.23.23.1 w3.org googlebot.com google.com
+# Satisfy Any
+
+# Habilitar compresión 
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript

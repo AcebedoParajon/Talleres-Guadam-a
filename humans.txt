@@ -1,0 +1,47 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  Boss: Francisco Rodriguez Gonzalez
+  Site: 
+  Twitter:
+  Location: Asturias, España
+
+  Web designer:Jose Luis Acebedo Parajón
+  Contact: acebedo.parajon [at] gmail.com
+  From: Asturias, España
+
+/* SITE */
+  Last update: Abril 2017
+  Standards: HTML5, CSS3
+  Components: Bootstrap, jQuery, Sublime Text
+  Language: Spanish
+  Doctype: HTML
+  Software:
+
+
+
+                               -o/-
+                               +oo//-
+                              :ooo+//:
+                             -ooooo///-
+                             /oooooo//:
+                            :ooooooo+//-
+                           -+oooooooo///-
+           -://////////////+oooooooooo++////////////::
+            :+ooooooooooooooooooooooooooooooooooooo+:::-
+              -/+ooooooooooooooooooooooooooooooo+/::////:-
+                -:+oooooooooooooooooooooooooooo/::///////:-
+                  --/+ooooooooooooooooooooo+::://////:-
+                     -:+ooooooooooooooooo+:://////:--
+                       /ooooooooooooooooo+//////:-
+                      -ooooooooooooooooooo////-
+                      /ooooooooo+oooooooooo//:
+                     :ooooooo+/::/+oooooooo+//-
+                    -oooooo/::///////+oooooo///-
+                    /ooo+::://////:---:/+oooo//:
+                   -o+/::///////:-      -:/+o+//-
+                   :-:///////:-            -:/://
+                     -////:-                 --//:
+                       --                       -:
